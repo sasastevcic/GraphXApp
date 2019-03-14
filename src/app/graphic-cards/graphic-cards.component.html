@@ -1,0 +1,27 @@
+<div class="row">
+    <div class="col-8">
+        <div class="row">
+            <div class="col-6">
+                <gx-pagination [currentPage]="parameters.page"
+                               [totalItems]="cards?.count"
+                               [pageSize]="parameters.pageSize"
+                               (pageChange)="changePage($event)"></gx-pagination>
+            </div>
+            <div class="col-6">
+                <button class="btn btn-secondary float-right" name="btn" (click)="changePageSize(20)">20</button>
+                <button class="btn btn-secondary float-right" name="btn" (click)="changePageSize(10)">10</button>
+                <button class="btn btn-secondary float-right" name="btn" (click)="changePageSize(5)">5</button>
+            </div>
+        </div>
+        <div class="row" *ngFor="let c of cards?.results">
+            <div class="col">
+                <gx-card
+                         [card]="c"></gx-card>
+            </div>
+        </div>
+    </div>
+    <div class="col-4">
+        <gx-comments (newComment)="sendComment($event)" 
+                     [comments]="comments?.results"></gx-comments>
+    </div>
+</div>

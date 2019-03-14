@@ -1,0 +1,10 @@
+<div class="row">
+    <div class="col">
+        <gx-form (sendComment)="sendComment($event)"></gx-form>
+    </div>
+</div>
+<div class="row" *ngFor="let c of comments">
+    <div class="col">
+        <gx-comment [comment]="c"></gx-comment>
+    </div>
+</div>

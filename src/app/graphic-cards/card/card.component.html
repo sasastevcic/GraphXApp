@@ -1,0 +1,24 @@
+<div class="row">
+    <div class="col-3">
+        <img src="../../../{{ card.image }}">
+    </div>
+    <div class="col-9">
+        <div class="row">
+            <div class="col">
+                <p><span class="text-primary" [routerLink]="['/cards/', card._id]">{{ card.title }} </span>{{ card.subtitle }}</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <p>{{ card.description }}</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <button class="btn btn-danger float-right" (click)="vote(card.grade - 1)">-</button>
+                <button class="btn btn-secodary float-right">{{ card.grade }}</button>
+                <button class="btn btn-success float-right" (click)="vote(card.grade + 1)">+</button>
+            </div>
+        </div>
+    </div>
+</div>
